@@ -1,5 +1,6 @@
 package org.sovliv.beanlifecycle;
 
+import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
@@ -35,20 +36,25 @@ public class LifeCycleBean implements BeanNameAware, BeanFactoryAware, Applicati
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("6. call after properties set at the init stage");
+        System.out.println("7. call after properties set at the init stage");
     }
 
     public void customInitMethod() {
-        System.out.println("7. call custom init method");
+        System.out.println("8. call custom init method");
     }
 
     @PreDestroy
     public void customPreDestroyMethod() {
-        System.out.println("9. call custom predestroy method");
+        System.out.println("10. call custom predestroy method");
     }
 
     @Override
     public void destroy() throws Exception {
-        System.out.println("10. call DisposableBean.destroy() method.");
+        System.out.println("11. call DisposableBean.destroy() method.");
+    }
+
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("6. call post construct method");
     }
 }

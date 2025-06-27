@@ -24,7 +24,7 @@ public class LifeCycleBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if (bean instanceof LifeCycleBean) {
-            System.out.println("8. call BPP AFTER initialization");
+            System.out.println("9. call BPP AFTER initialization");
         }
         return bean;
     }
