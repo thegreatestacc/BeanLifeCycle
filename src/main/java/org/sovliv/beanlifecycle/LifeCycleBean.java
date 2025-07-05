@@ -34,6 +34,11 @@ public class LifeCycleBean implements BeanNameAware, BeanFactoryAware, Applicati
         System.out.println("4. setting application context. aware");
     }
 
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("6. call post construct method");
+    }
+
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("7. call after properties set at the init stage");
@@ -51,10 +56,5 @@ public class LifeCycleBean implements BeanNameAware, BeanFactoryAware, Applicati
     @Override
     public void destroy() throws Exception {
         System.out.println("11. call DisposableBean.destroy() method.");
-    }
-
-    @PostConstruct
-    public void postConstruct() {
-        System.out.println("6. call post construct method");
     }
 }
