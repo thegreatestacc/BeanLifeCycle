@@ -9,5 +9,5 @@ public class BeanLifeCycleApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BeanLifeCycleApplication.class, args);
 	}
-
 }
+
